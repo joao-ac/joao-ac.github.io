@@ -1,101 +1,145 @@
-import Image from "next/image";
+"use client"; // This is a client component
 
-export default function Home() {
+import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Code2, Github, Linkedin, Mail, MenuIcon, Moon, Sun, X } from 'lucide-react'
+
+export default function Portfolio() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  useEffect(() => setMounted(true), [])
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+
+  const toggleTheme = () => {
+    if (theme === 'dark') {
+      setTheme('light')
+    } else {
+      setTheme('dark')
+    }
+  }
+
+  if (!mounted) return null
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-14 items-center">
+          <div className="mr-4 flex">
+            <a className="mr-6 flex items-center space-x-2" href="/">
+              <Code2 className="h-6 w-6" />
+              <span className="font-bold sm:inline-block">DevPortfolio</span>
+            </a>
+            <nav className="flex items-center space-x-6 text-sm font-medium">
+              <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#about">
+                Sobre
+              </a>
+              <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#projects">
+                Projetos
+              </a>
+              <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#contact">
+                Contato
+              </a>
+            </nav>
+          </div>
+          <div className="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
+            <Button className="sm:hidden" variant="ghost" size="icon" onClick={toggleMenu}>
+              {isMenuOpen ? <X className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+            </Button>
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
+              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
+      </header>
+
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-background sm:hidden">
+          <nav className="flex flex-col items-center justify-center h-full space-y-8 text-lg">
+            <a href="#about" onClick={toggleMenu}>Sobre</a>
+            <a href="#projects" onClick={toggleMenu}>Projetos</a>
+            <a href="#contact" onClick={toggleMenu}>Contato</a>
+          </nav>
+        </div>
+      )}
+
+      <main className="container mx-auto px-4 py-8">
+        <section id="about" className="mb-16 text-center">
+          <h1 className="text-4xl font-bold mb-4">Olá, eu sou [Seu Nome]</h1>
+          <p className="text-xl mb-6">Desenvolvedor Full Stack apaixonado por criar soluções inovadoras</p>
+          <div className="flex justify-center space-x-4">
+            <Button variant="outline" size="icon">
+              <Github className="h-4 w-4" />
+            </Button>
+            <Button variant="outline" size="icon">
+              <Linkedin className="h-4 w-4" />
+            </Button>
+          </div>
+        </section>
+
+        <section id="projects" className="mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">Meus Projetos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3].map((project) => (
+              <Card key={project}>
+                <CardHeader>
+                  <CardTitle>Projeto {project}</CardTitle>
+                  <CardDescription>Breve descrição do projeto</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="aspect-video bg-muted"></div>
+                </CardContent>
+                <CardFooter>
+                  <Button>Ver Projeto</Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">Entre em Contato</h2>
+          <Card>
+            <CardHeader>
+              <CardTitle>Envie uma mensagem</CardTitle>
+              <CardDescription>Ficarei feliz em responder suas perguntas.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form className="space-y-4">
+                <Input placeholder="Seu nome" />
+                <Input type="email" placeholder="Seu email" />
+                <Textarea placeholder="Sua mensagem" />
+                <Button type="submit" className="w-full">Enviar</Button>
+              </form>
+            </CardContent>
+          </Card>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="border-t py-6 md:py-0">
+        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+          <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+            © 2023 DevPortfolio. Todos os direitos reservados.
+          </p>
+          <div className="flex items-center space-x-1">
+            <Button variant="ghost" size="icon">
+              <Mail className="h-4 w-4" />
+            </Button>
+            <Button variant="ghost" size="icon">
+              <Github className="h-4 w-4" />
+            </Button>
+            <Button variant="ghost" size="icon">
+              <Linkedin className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
