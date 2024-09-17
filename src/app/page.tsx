@@ -25,6 +25,13 @@ export default function Portfolio() {
     }
   }
 
+useEffect(() => {
+  if (mounted) {
+    console.log("Current theme:", theme);
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }
+}, [theme, mounted]);
+
   if (!mounted) return null
 
   return (
@@ -34,7 +41,7 @@ export default function Portfolio() {
           <div className="mr-4 flex">
             <a className="mr-6 flex items-center space-x-2" href="/">
               <Code2 className="h-6 w-6" />
-              <span className="font-bold sm:inline-block">DevPortfolio</span>
+              <span className="font-bold sm:inline-block">João Antonio Correia</span>
             </a>
             <nav className="flex items-center space-x-6 text-sm font-medium">
               <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#about">
@@ -71,8 +78,8 @@ export default function Portfolio() {
 
       <main className="container mx-auto px-4 py-8">
         <section id="about" className="mb-16 text-center">
-          <h1 className="text-4xl font-bold mb-4">Olá, eu sou [Seu Nome]</h1>
-          <p className="text-xl mb-6">Desenvolvedor Full Stack apaixonado por criar soluções inovadoras</p>
+          <h1 className="text-4xl font-bold mb-4">Olá, me chamo João Antonio.</h1>
+          <p className="text-xl mb-6">Sou estudante de análise e desenvolvimento de sistemas.</p>
           <div className="flex justify-center space-x-4">
             <Button variant="outline" size="icon">
               <Github className="h-4 w-4" />
@@ -125,7 +132,7 @@ export default function Portfolio() {
       <footer className="border-t py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            © 2023 DevPortfolio. Todos os direitos reservados.
+            © 2024 João Antonio Correia. Todos os direitos reservados.
           </p>
           <div className="flex items-center space-x-1">
             <Button variant="ghost" size="icon">
