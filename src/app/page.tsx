@@ -34,6 +34,10 @@ export default function Portfolio() {
 
   const scrollToSection = (id: string) => {
     const section = document.querySelector(id);
+    if (!section) {
+      console.error(`Element with id ${id} not found.`);
+      return;
+    }
     const offset = -80;
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = section.getBoundingClientRect().top;
