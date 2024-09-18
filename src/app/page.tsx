@@ -32,13 +32,13 @@ export default function Portfolio() {
     }
   }
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     const section = document.querySelector(id);
-  const offset = -80; // Ajuste o valor de compensação, depende do seu cabeçalho
-  const bodyRect = document.body.getBoundingClientRect().top;
-  const elementRect = section.getBoundingClientRect().top;
-  const elementPosition = elementRect - bodyRect;
-  const offsetPosition = elementPosition + offset;
+    const offset = -80;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = section.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition + offset;
 
   window.scrollTo({
     top: offsetPosition,
