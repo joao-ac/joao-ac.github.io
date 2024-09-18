@@ -170,7 +170,7 @@ return (
   <Card>
   <CardHeader>
   <CardTitle>Send a message</CardTitle>
-  <CardDescription>I'll be happy to answer your questions.</CardDescription>
+  <CardDescription>I&apos;ll be happy to answer your questions.</CardDescription>
   </CardHeader>
   <CardContent>
   <form className="space-y-4">
