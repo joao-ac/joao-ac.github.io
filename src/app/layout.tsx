@@ -2,11 +2,13 @@
 import localFont from "next/font/local";*/
 import "./globals.css";
 import { Providers } from './providers'
+import { JetBrains_Mono } from 'next/font/google'
 
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] })
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={jetbrainsMono.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
