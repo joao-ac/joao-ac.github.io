@@ -9,7 +9,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
 import { Code2, Github, Linkedin, Mail, MenuIcon, Moon, Sun, X, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
-import Head from 'next/head'
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
