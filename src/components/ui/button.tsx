@@ -30,31 +30,36 @@ const buttonVariants = cva(
   }
 );
 
-// Extend ButtonProps to include anchor attributes
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof buttonVariants> {
-  as?: React.ElementType; // Use as to specify the component type
+// Create a type that determines if the Button is an anchor or a button
+type ButtonProps<T extends React.ElementType> =
+  T extends "a"
+    ? React.AnchorHTMLAttributes<HTMLAnchorElement> & VariantProps<typeof buttonVariants>
+    : React.ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonVariants>;
+
+interface BaseButtonProps {
+  as?: React.ElementType; // Use 'as' to specify the component type
   asChild?: boolean; // Whether to render as a child
 }
 
-const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
-  ({ className, variant, size, as: Component = "button", asChild = false, children, ...props }, ref) => {
-    const Comp = asChild ? Slot : Component; // Choose the right component to render
+const Button = <T extends React.ElementType = "button">(
+  { className, variant, size, as: Component = "button", asChild = false, children, ...props }:
+  BaseButtonProps & ButtonProps<T>,
+  ref: React.Ref<T>
+) => {
+  const Comp = asChild ? Slot : Component;
 
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      >
-        {children}
-      </Comp>
-    );
-  }
-);
+  return (
+    <Comp
+      className={cn(buttonVariants({ variant, size, className }))}
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </Comp>
+  );
+};
 
-Button.displayName = "Button";
+const ForwardedButton = React.forwardRef(Button);
+ForwardedButton.displayName = "Button";
 
-export { Button, buttonVariants };
+export { ForwardedButton as Button, buttonVariants };
