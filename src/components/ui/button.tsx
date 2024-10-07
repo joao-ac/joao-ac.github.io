@@ -30,10 +30,12 @@ const buttonVariants = cva(
   }
 );
 
+// Extend ButtonProps to include anchor attributes
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement>,
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
     VariantProps<typeof buttonVariants> {
-  as?: React.ElementType; // 'as' prop to specify the component type
+  as?: React.ElementType; // Use as to specify the component type
   asChild?: boolean; // Whether to render as a child
 }
 
@@ -47,7 +49,7 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
         ref={ref}
         {...props}
       >
-        {asChild ? children : <>{children}</>} {/* Ensure only one child */}
+        {children}
       </Comp>
     );
   }
