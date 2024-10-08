@@ -101,6 +101,9 @@ export default function Portfolio() {
     <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#about" onClick={() => scrollToSection('#about')}>
     About me
     </a>
+    <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#education" onClick={() => scrollToSection('#education')}>
+    Education
+    </a>
     <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#skills" onClick={() => scrollToSection('#skills')}>
     Skills
     </a>
@@ -127,6 +130,7 @@ export default function Portfolio() {
       <div className="fixed inset-0 z-40 bg-background sm:hidden">
       <nav className="flex flex-col items-center justify-center h-full space-y-8 text-lg">
       <a href="#about" onClick={() => { scrollToSection('#about'); toggleMenu(); }}>About me</a>
+      <a href="#education" onClick={() => { scrollToSection('#skills'); toggleMenu(); }}>Education</a>
       <a href="#skills" onClick={() => { scrollToSection('#skills'); toggleMenu(); }}>Skills</a>
       <a href="#projects" onClick={() => { scrollToSection('#projects'); toggleMenu(); }}>Projects</a>
       <a href="#contact" onClick={() => { scrollToSection('#contact'); toggleMenu(); }}>Contact</a>
@@ -150,7 +154,46 @@ export default function Portfolio() {
     </div>
     </section>
 
+    <section id="education" className="mb-16">
+    <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
+    <div className="space-y-4">
+    <Card>
+    <CardHeader>
+    <CardTitle>Analysis and Systems Development</CardTitle>
+    <CardDescription>Centro Universitário Internacional Uninter</CardDescription>
+    <CardDescription>Expected Graduation: 2025</CardDescription>
+    </CardHeader>
+    <CardContent>
+    <p className="text-lg">Pursuing a degree in Systems Analysis and Development, focusing on software development, data structures, and modern web technologies. Expanding my skills in programming and system design.</p>
+    </CardContent>
+    </Card>
+    </div>
+    </section>
+
     <section id="skills" className="mb-16">
+  <h2 className="text-3xl font-bold mb-8 text-center">My Skills</h2>
+  <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    {skills.map((skill) => (
+      <Card key={skill.name} className="flex flex-col items-center">
+        <CardHeader className="flex flex-col items-center">
+          <div className="w-16 h-16 mb-2">
+            <Image
+              src={skill.logo}
+              alt={`${skill.name} logo`}
+              width={64}
+              height={64}
+              className="object-contain"
+            />
+          </div>
+          <CardTitle className="text-center">{skill.name}</CardTitle>
+        </CardHeader>
+      </Card>
+    ))}
+  </div>
+</section>
+
+
+    {/*<section id="skills" className="mb-16">
     <h2 className="text-3xl font-bold mb-8 text-center">My Skills</h2>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
     {skills.map((skill) => (
@@ -168,7 +211,7 @@ export default function Portfolio() {
       </div>
       ))}
     </div>
-    </section>
+    </section>*/}
 
     <section id="projects" className="mb-16">
     <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>

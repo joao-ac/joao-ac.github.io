@@ -7,6 +7,9 @@ import { JetBrains_Mono } from 'next/font/google'
 export const metadata = {
   title: 'João Antonio - Portfolio',
   description: 'Portfolio of João Antonio, a Systems Analysis and Development student.',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] })
