@@ -78,13 +78,13 @@ export default function Portfolio() {
     technologies: ["Python", "Flask", "SQLite", "JavaScript", "HTML", "CSS"],
     githubUrl: "https://github.com/joao-ac/app_lista_de_tarefas"
   },
-  // {
-  //   title: "Task Management System",
-  //   description: "A task management system with user authentication and real-time updates",
-  //   image: "/placeholder.svg?height=200&width=300",
-  //   technologies: ["React", "Firebase", "Material-UI"],
-  //   githubUrl: "https://github.com/yourusername/task-management-system"
-  // }
+  {
+    title: "Sumarização de vídeos Shorts do Youtube",
+    description: "Uma aplicação que retorna o resumo de um vídeo Shorts do Youtube, utilizando um modelo de inteligência artificial.",
+    image: "/previews/nlw.png?height=200&width=300",
+    technologies: ["React", "Vite","Node.js", "Express", "ytdl-core", "@xenova/transformers", "CORS", "Axios"],
+    githubUrl: "https://github.com/joao-ac/NLW-ai"
+  }
   ]
 
   return (
