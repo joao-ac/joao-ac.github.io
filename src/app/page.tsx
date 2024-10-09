@@ -56,8 +56,15 @@ export default function Portfolio() {
     const skills = [
       { name: 'Python', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
       { name: 'Java', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+      { name: 'Nodejs', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+      { name: 'Nextjs', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+      { name: 'Flask', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" },
+      { name: 'React', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
       { name: 'JavaScript', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+      { name: 'TypeScript', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
       { name: 'MySQL', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+      { name: 'SQLite', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" },
+      { name: 'Arduino', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg" },
       { name: 'Git', logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
       { name: 'GitHub', logo: theme === 'dark' ? "/logos/github-mark-white.svg" : "/logos/github-mark.svg" },
       ]
@@ -65,27 +72,48 @@ export default function Portfolio() {
   const projects = [
   {
     title: "Portfolio",
-    description: "Um portfolio de apresentação, mostrando meus projetos e habilidades",
+    description: "A dynamic portfolio that showcases my projects and skills in web development. Explore my creations and see how I apply modern technologies to solve real-world problems.",
     image: "/previews/portfolio.png?height=200&width=300",
-    technologies: ["Next.js", "JavaScript", "HTML", "CSS"],
+    technologies: ["Nextjs", "JavaScript", "HTML", "CSS"],
     liveUrl: "https://joao-ac.github.io/",
     githubUrl: "https://github.com/joao-ac/joao-ac.github.io"
   },
   {
     title: "Task List - Prototype",
-    description: "A task list application in development",
+    description: "An in-development application that allows users to manage their tasks intuitively. With a clean interface and practical features, the Task List makes everyday organization easier.",
     image: "/previews/tarefas.png?height=200&width=300",
     technologies: ["Python", "Flask", "SQLite", "JavaScript", "HTML", "CSS"],
     githubUrl: "https://github.com/joao-ac/app_lista_de_tarefas"
   },
   {
-    title: "Sumarização de vídeos Shorts do Youtube",
-    description: "Uma aplicação que retorna o resumo de um vídeo Shorts do Youtube, utilizando um modelo de inteligência artificial.",
+    title: "YouTube Shorts Video Summarization",
+    description: "An application that uses artificial intelligence to provide concise summaries of YouTube Shorts videos. Perfect for those who want to quickly grasp key information without watching the entire video.",
     image: "/previews/nlw.png?height=200&width=300",
-    technologies: ["React", "Vite","Node.js", "Express", "ytdl-core", "@xenova/transformers", "CORS", "Axios"],
+    technologies: ["React", "Vite", "Nodejs", "Express", "ytdl-core", "@xenova/transformers", "CORS", "Axios"],
     githubUrl: "https://github.com/joao-ac/NLW-ai"
   }
   ]
+
+  const education = [
+  {
+    title: "Analysis and Systems Development",
+    institution: "Centro Universitário Internacional Uninter",
+    graduation: "Expected Graduation: 2025",
+    description: "Pursuing a degree in Systems Analysis and Development, focusing on software development, data structures, and modern web technologies. Expanding my skills in programming and system design."
+  },
+  {
+    title: "NLW AI - Rocketseat",
+    institution: "Rocketseat",
+    graduation: "2023",
+    description: "Participated in the NLW AI program, where I developed an application for summarizing YouTube Shorts videos using artificial intelligence models, enhancing my skills in React, Node.js, and AI integration."
+  },
+  {
+    title: "Computer Hardware Basics",
+    institution: "Cisco",
+    graduation: "2023",
+    description: "Completed the Computer Hardware Basics course, covering fundamental concepts of hardware components, troubleshooting, and system maintenance, providing a solid foundation in computer hardware."
+  }
+  ];
 
   return (
     <>
@@ -116,10 +144,10 @@ export default function Portfolio() {
     </nav>
     </div>
     <div className="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
-    <Button className="sm:hidden" variant="ghost" size="icon" onClick={toggleMenu}>
+    <Button className="sm:hidden transition-transform duration-300 transform" variant="ghost" size="icon" onClick={toggleMenu}>
     {isMenuOpen ? <X className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
     </Button>
-    <Button variant="ghost" size="icon" onClick={toggleTheme}>
+    <Button className="transition-transform duration-300 transform" variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
     {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </Button>
     </div>
@@ -140,8 +168,8 @@ export default function Portfolio() {
 
     <main className="container mx-auto px-4 py-8">
     <section id="about" className="mb-16 text-center">
-    <h1 className="text-4xl font-bold mb-4">About Me</h1>
-    <p className="text-xl mb-6">Hello! My name is João Antonio, and I am a Systems Analysis and Development student. Through my studies, I have gained experience working with Python, Java, JavaScript, MySQL, Git, and GitHub, and I am continuously expanding my knowledge through various courses in web development and software development. I am currently looking for new opportunities to apply my skills and grow as a developer.</p>
+    <h1 className="text-4xl font-bold mb-4">About Me</h1> 
+    <p className="text-xl mb-6 text-lg leading-relaxed max-w-prose mx-auto">Hello! My name is João Antonio, and I am a Systems Analysis and Development student. Through my studies, I have gained experience working with Python, Java, JavaScript, MySQL, Git, and GitHub, and I am continuously expanding my knowledge through various courses in web development and software development. I am currently looking for new opportunities to apply my skills and grow as a developer.</p>
     <div className="flex justify-center space-x-4">
     <Button variant="outline" size="icon" as="a" href="https://github.com/joao-ac" target="_blank" rel="noopener noreferrer">
     <Github className="h-4 w-4" />
@@ -156,48 +184,28 @@ export default function Portfolio() {
 
     <section id="education" className="mb-16">
     <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
-    <div className="space-y-4">
-    <Card>
-    <CardHeader>
-    <CardTitle>Analysis and Systems Development</CardTitle>
-    <CardDescription>Centro Universitário Internacional Uninter</CardDescription>
-    <CardDescription>Expected Graduation: 2025</CardDescription>
-    </CardHeader>
-    <CardContent>
-    <p className="text-lg">Pursuing a degree in Systems Analysis and Development, focusing on software development, data structures, and modern web technologies. Expanding my skills in programming and system design.</p>
-    </CardContent>
-    </Card>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {education.map((edu, index) => (
+      <Card key={index} className="transition-transform hover:-translate-y-2 hover:shadow-lg">
+      <CardHeader className="flex flex-col items-center">
+      <CardTitle>{edu.title}</CardTitle>
+      <CardDescription>{edu.institution}</CardDescription>
+      <CardDescription>{edu.graduation}</CardDescription>
+      </CardHeader>
+      <CardContent>
+      <p className="text-lg">{edu.description}</p>
+      </CardContent>
+      </Card>
+      ))}
     </div>
     </section>
 
     <section id="skills" className="mb-16">
-  <h2 className="text-3xl font-bold mb-8 text-center">My Skills</h2>
-  <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
     {skills.map((skill) => (
-      <Card key={skill.name} className="flex flex-col items-center">
-        <CardHeader className="flex flex-col items-center">
-          <div className="w-16 h-16 mb-2">
-            <Image
-              src={skill.logo}
-              alt={`${skill.name} logo`}
-              width={64}
-              height={64}
-              className="object-contain"
-            />
-          </div>
-          <CardTitle className="text-center">{skill.name}</CardTitle>
-        </CardHeader>
-      </Card>
-    ))}
-  </div>
-</section>
-
-
-    {/*<section id="skills" className="mb-16">
-    <h2 className="text-3xl font-bold mb-8 text-center">My Skills</h2>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
-    {skills.map((skill) => (
-      <div key={skill.name} className="flex flex-col items-center">
+      <Card key={skill.name} className="flex flex-col items-center transition-transform hover:-translate-y-2 hover:shadow-lg">
+      <CardHeader className="flex flex-col items-center">
       <div className="w-16 h-16 mb-2">
       <Image
       src={skill.logo}
@@ -207,56 +215,58 @@ export default function Portfolio() {
       className="object-contain"
       />
       </div>
-      <span className="text-sm font-medium">{skill.name}</span>
-      </div>
-      ))}
-    </div>
-    </section>*/}
-
-    <section id="projects" className="mb-16">
-    <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-    {projects.map((project, index) => (
-      <Card key={index}>
-      <CardHeader>
-      <CardTitle>{project.title}</CardTitle>
-      <CardDescription>{project.description}</CardDescription>
+      <CardTitle className="text-center">{skill.name}</CardTitle>
       </CardHeader>
-      <CardContent>
-      <div className="aspect-video bg-muted mb-4">
-      <Image
-      src={project.image}
-      alt={project.title}
-      width={900}
-      height={600}
-      className="object-cover w-full h-full"
-      />
-      </div>
-      <div className="flex flex-wrap gap-2">
-      {project.technologies.map((tech, techIndex) => (
-        <Badge key={techIndex} variant="secondary">{tech}</Badge>
-        ))}
-      </div>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-      {project.liveUrl && (
-        <Button as="a" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-        <ExternalLink className="mr-2 h-4 w-4" />
-        Live Demo
-        </Button>
-        )}
-      <Button variant="outline" as="a" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-      <Github className="mr-2 h-4 w-4" />
-      View Code
-      </Button>
-      </CardFooter>
       </Card>
       ))}
     </div>
     </section>
+
+    <section id="projects" className="mb-16">
+  <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {projects.map((project, index) => (
+      <Card key={index} className="flex flex-col h-full">
+        <CardHeader>
+          <CardTitle>{project.title}</CardTitle>
+          <CardDescription className="min-h-[100px]">{project.description}</CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow">
+          <div className="aspect-video bg-muted mb-4">
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={900}
+              height={600}
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.technologies.map((tech, techIndex) => (
+              <Badge key={techIndex} variant="secondary">{tech}</Badge>
+            ))}
+          </div>
+        </CardContent>
+        <CardFooter className="mt-auto flex justify-between">
+          {project.liveUrl && (
+            <Button as="a" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Live Demo
+            </Button>
+          )}
+          <Button variant="outline" as="a" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+            <Github className="mr-2 h-4 w-4" />
+            View Code
+          </Button>
+        </CardFooter>
+      </Card>
+    ))}
+  </div>
+</section>
+
     <section id="contact" className="mb-16">
     <h2 className="text-3xl font-bold mb-8 text-center">Contact Me</h2>
-    <Card>
+    <Card className="max-w-[800px] mx-auto">
     <CardHeader>
     <CardTitle>Feel free to reach out through any of the platforms below:</CardTitle>
     </CardHeader>
@@ -264,7 +274,7 @@ export default function Portfolio() {
     <div className="space-y-4">
     <div className="flex items-center space-x-2">
     <Mail className="h-5 w-5 text-primary" />
-          <span className="text-lg">joao.ac1406@gmail.com</span> {/* Replace with your actual email */}
+    <span className="text-lg">joao.ac1406@gmail.com</span>
     </div>
     <div className="flex items-center space-x-2">
     <Linkedin className="h-5 w-5 text-primary" />
@@ -274,7 +284,7 @@ export default function Portfolio() {
     rel="noopener noreferrer"
     className="text-lg hover:underline"
     >
-    LinkedIn
+    LinkedIn Profile
     </a>
     </div>
     <div className="flex items-center space-x-2">
@@ -285,12 +295,12 @@ export default function Portfolio() {
     rel="noopener noreferrer"
     className="text-lg hover:underline"
     >
-    GitHub
+    GitHub Profile
     </a>
     </div>
     <div className="flex items-center space-x-2">
     <Phone className="h-5 w-5 text-primary" />
-          <span className="text-lg">+55 (45) 99985-1704</span> {/* Replace with your actual phone number */}
+    <span className="text-lg">+55 (45) 99985-1704</span>
     </div>
     </div>
     </CardContent>
