@@ -96,18 +96,21 @@ export default function Portfolio() {
 
   const education = [
   {
+    logo: "/logos/uninter.png",
     title: "Analysis and Systems Development",
     institution: "Centro Universitário Internacional Uninter",
     graduation: "Expected Graduation: 2025",
     description: "Pursuing a degree in Systems Analysis and Development, focusing on software development, data structures, and modern web technologies. Expanding my skills in programming and system design."
   },
   {
+    logo: "/logos/rocketseat.png",
     title: "NLW AI - Rocketseat",
     institution: "Rocketseat",
     graduation: "2023",
     description: "Participated in the NLW AI program, where I developed an application for summarizing YouTube Shorts videos using artificial intelligence models, enhancing my skills in React, Node.js, and AI integration."
   },
   {
+    logo: "/logos/cisco.png",
     title: "Computer Hardware Basics",
     institution: "Cisco",
     graduation: "2023",
@@ -123,7 +126,7 @@ export default function Portfolio() {
     <div className="mr-4 flex">
     <a className="mr-6 flex items-center space-x-2" href="/">
     <Code2 className="h-6 w-6" />
-    <span className="font-bold sm:inline-block">Dev Portfolio</span>
+    <span className="font-bold sm:inline-block">DevPortfolio</span>
     </a>
     <nav className="flex items-center space-x-6 text-sm font-medium">
     <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#about" onClick={() => scrollToSection('#about')}>
@@ -144,7 +147,7 @@ export default function Portfolio() {
     </nav>
     </div>
     <div className="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
-    <Button className="sm:hidden transition-transform duration-300 transform" variant="ghost" size="icon" onClick={toggleMenu}>
+    <Button className="sm:hidden transition-transform duration-300" variant="ghost" size="icon" onClick={toggleMenu}>
     {isMenuOpen ? <X className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
     </Button>
     <Button className="transition-transform duration-300 transform" variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
@@ -168,21 +171,48 @@ export default function Portfolio() {
 
     <main className="container mx-auto px-4 py-8">
     <section id="about" className="mb-16 text-center">
-    <h1 className="text-4xl font-bold mb-4">About Me</h1> 
-    <p className="text-xl mb-6 text-lg leading-relaxed max-w-prose mx-auto">Hello! My name is João Antonio, and I am a Systems Analysis and Development student. Through my studies, I have gained experience working with Python, Java, JavaScript, MySQL, Git, and GitHub, and I am continuously expanding my knowledge through various courses in web development and software development. I am currently looking for new opportunities to apply my skills and grow as a developer.</p>
+    <h1 className="text-3xl font-bold mb-4">About me</h1>
+    <p className="mb-6 text-lg leading-relaxed max-w-[900px] mx-auto">I’m João Antonio, a Systems Analysis and Development student with experience in Python, Java, and MySQL. I’m currently focusing on Python for data extraction and software development, and I also have front-end experience with React, Node.js, and Next.js. I’m looking for opportunities to apply my skills and contribute to new projects. </p>
     <div className="flex justify-center space-x-4">
-    <Button variant="outline" size="icon" as="a" href="https://github.com/joao-ac" target="_blank" rel="noopener noreferrer">
+    <Button className="transition-colors" variant="link" size="icon" as="a" href="https://github.com/joao-ac" target="_blank" rel="noopener noreferrer">
     <Github className="h-4 w-4" />
     <span className="sr-only">GitHub</span>
     </Button>
-    <Button variant="outline" size="icon" as="a" href="https://www.linkedin.com/in/jo%C3%A3o-antonio-409082292/" target="_blank" rel="noopener noreferrer">
+    <Button className="transition-colors" variant="link" size="icon" as="a" href="https://www.linkedin.com/in/jo%C3%A3o-antonio-409082292/" target="_blank" rel="noopener noreferrer">
     <Linkedin className="h-4 w-4" />
     <span className="sr-only">LinkedIn</span>
     </Button>
     </div>
     </section>
 
-    <section id="education" className="mb-16">
+<section id="education" className="mb-16">
+  <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {education.map((edu, index) => (
+      <Card key={index} className="transition-transform hover:-translate-y-2 hover:shadow-lg">
+        <CardHeader className="flex flex-col justify-stretch">
+          <div className="flex mb-2">
+            <img
+              src={edu.logo} // Ensure you have a logo property in your education data
+              alt={`${edu.institution} Logo`}
+              className="h-12 w-12 mr-5" // Adjust size as necessary
+            />
+            <div className="flex flex-col justify-stretch">
+              <CardTitle>{edu.title}</CardTitle>
+              <CardDescription>{edu.institution}</CardDescription>
+              <CardDescription>{edu.graduation}</CardDescription>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <p className="text-lg">{edu.description}</p>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</section>
+
+    {/*<section id="education" className="mb-16">
     <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {education.map((edu, index) => (
@@ -198,7 +228,7 @@ export default function Portfolio() {
       </Card>
       ))}
     </div>
-    </section>
+    </section>*/}
 
     <section id="skills" className="mb-16">
     <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
@@ -223,50 +253,50 @@ export default function Portfolio() {
     </section>
 
     <section id="projects" className="mb-16">
-  <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {projects.map((project, index) => (
       <Card key={index} className="flex flex-col h-full">
-        <CardHeader>
-          <CardTitle>{project.title}</CardTitle>
-          <CardDescription className="min-h-[100px]">{project.description}</CardDescription>
-        </CardHeader>
-        <CardContent className="flex-grow">
-          <div className="aspect-video bg-muted mb-4">
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={900}
-              height={600}
-              className="object-cover w-full h-full"
-            />
-          </div>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.technologies.map((tech, techIndex) => (
-              <Badge key={techIndex} variant="secondary">{tech}</Badge>
-            ))}
-          </div>
-        </CardContent>
-        <CardFooter className="mt-auto flex justify-between">
-          {project.liveUrl && (
-            <Button as="a" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Live Demo
-            </Button>
-          )}
-          <Button variant="outline" as="a" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-            <Github className="mr-2 h-4 w-4" />
-            View Code
-          </Button>
-        </CardFooter>
+      <CardHeader>
+      <CardTitle>{project.title}</CardTitle>
+      <CardDescription className="min-h-[100px]">{project.description}</CardDescription>
+      </CardHeader>
+      <CardContent className="flex-grow">
+      <div className="aspect-video bg-muted mb-4">
+      <Image
+      src={project.image}
+      alt={project.title}
+      width={900}
+      height={600}
+      className="object-cover w-full h-full"
+      />
+      </div>
+      <div className="flex flex-wrap gap-2 mb-4">
+      {project.technologies.map((tech, techIndex) => (
+        <Badge key={techIndex} variant="secondary">{tech}</Badge>
+        ))}
+      </div>
+      </CardContent>
+      <CardFooter className="mt-auto flex justify-between">
+      {project.liveUrl && (
+        <Button as="a" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+        <ExternalLink className="mr-2 h-4 w-4" />
+        Live Demo
+        </Button>
+        )}
+      <Button variant="link" as="a" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+      <Github className="mr-2 h-4 w-4" />
+      View Code
+      </Button>
+      </CardFooter>
       </Card>
-    ))}
-  </div>
-</section>
+      ))}
+    </div>
+    </section>
 
-    <section id="contact" className="mb-16">
+    <section id="contact" className="mb-16 flex flex-col items-center">
     <h2 className="text-3xl font-bold mb-8 text-center">Contact Me</h2>
-    <Card className="max-w-[800px] mx-auto">
+    <Card className="flex flex-col items-center">
     <CardHeader>
     <CardTitle>Feel free to reach out through any of the platforms below:</CardTitle>
     </CardHeader>
