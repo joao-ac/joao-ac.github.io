@@ -115,6 +115,13 @@ export default function Portfolio() {
     institution: "Cisco",
     graduation: "2023",
     description: "Completed the Computer Hardware Basics course, covering fundamental concepts of hardware components, troubleshooting, and system maintenance, providing a solid foundation in computer hardware."
+  },
+  {
+    logo: "/logos/cisco.png",
+    title: "Introduction to Data Science",
+    institution: "Cisco",
+    graduation: "2024",
+    description: "In the Introduction to Data Science course, I learned the basics of data science and analysis, exploring how machine learning influences fields like business, healthcare, and education. I gained skills in deriving insights for data-driven decision-making, a valuable asset in today's job market."
   }
   ];
 
