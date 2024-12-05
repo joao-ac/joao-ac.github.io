@@ -185,7 +185,7 @@ export default function Portfolio() {
     <Github className="h-4 w-4" />
     <span className="sr-only">GitHub</span>
     </Button>
-    <Button className="transition-colors" variant="link" size="icon" as="a" href="https://www.linkedin.com/in/jo%C3%A3o-antonio-409082292/" target="_blank" rel="noopener noreferrer">
+    <Button className="transition-colors" variant="link" size="icon" as="a" href="https://www.linkedin.com/in/jo%C3%A3o-ant%C3%B4nio-correia-409082292/" target="_blank" rel="noopener noreferrer">
     <Linkedin className="h-4 w-4" />
     <span className="sr-only">LinkedIn</span>
     </Button>
@@ -316,7 +316,7 @@ export default function Portfolio() {
     <div className="flex items-center space-x-2">
     <Linkedin className="h-5 w-5 text-primary" />
     <a
-    href="https://www.linkedin.com/in/jo%C3%A3o-antonio-409082292/"
+    href="https://www.linkedin.com/in/jo%C3%A3o-ant%C3%B4nio-correia-409082292/"
     target="_blank"
     rel="noopener noreferrer"
     className="text-lg hover:underline"
@@ -359,7 +359,7 @@ export default function Portfolio() {
     <Github className="h-4 w-4" />
     <span className="sr-only">GitHub</span>
     </Button>
-    <Button variant="ghost" size="icon" as="a" href="https://www.linkedin.com/in/jo%C3%A3o-antonio-409082292/" target="_blank" rel="noopener noreferrer">
+    <Button variant="ghost" size="icon" as="a" href="https://www.linkedin.com/in/jo%C3%A3o-ant%C3%B4nio-correia-409082292/" target="_blank" rel="noopener noreferrer">
     <Linkedin className="h-4 w-4" />
     <span className="sr-only">LinkedIn</span>
     </Button>
