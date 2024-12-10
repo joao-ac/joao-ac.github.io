@@ -122,6 +122,13 @@ export default function Portfolio() {
     institution: "Cisco",
     graduation: "2024",
     description: "In the Introduction to Data Science course, I learned the basics of data science and analysis, exploring how machine learning influences fields like business, healthcare, and education. I gained skills in deriving insights for data-driven decision-making, a valuable asset in today's job market."
+  },
+  {
+    logo: "/logos/cisco.png",
+    title: "Python Essentials 1",
+    institution: "Cisco",
+    graduation: "2024",
+    description: "Completed an introductory course by Cisco and OpenEDG Python Institute, where I learned the fundamentals of programming, mastered Python syntax and semantics, and gained hands-on experience solving coding challenges using the Python Standard Library."
   }
   ];
 
