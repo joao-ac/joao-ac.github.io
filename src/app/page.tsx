@@ -179,7 +179,7 @@ export default function Portfolio() {
     <main className="container mx-auto px-4 py-8">
     <section id="about" className="mb-16 text-center">
     <h1 className="text-3xl font-bold mb-4">About me</h1>
-    <p className="mb-6 text-lg leading-relaxed max-w-[900px] mx-auto">I’m João Antonio, a Systems Analysis and Development student with experience in Python, Java, and MySQL. I’m currently focusing on Python for data extraction and software development, and I also have front-end experience with React, Node.js, and Next.js. I’m looking for opportunities to apply my skills and contribute to new projects. </p>
+    <p className="mb-6 text-lg leading-relaxed max-w-[900px] mx-auto">I’m João Antonio, a Systems Analysis and Development student with experience in Python, Java, Node.js and MySQL. I’m currently focusing on Python for data extraction and software development, and I also have front-end experience with React and Next.js. I’m looking for opportunities to apply my skills and contribute to new projects. </p>
     <div className="flex justify-center space-x-4">
     <Button className="transition-colors" variant="link" size="icon" as="a" href="https://github.com/joao-ac" target="_blank" rel="noopener noreferrer">
     <Github className="h-4 w-4" />
