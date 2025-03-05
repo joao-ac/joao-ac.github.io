@@ -69,29 +69,36 @@ export default function Portfolio() {
       { name: 'GitHub', logo: theme === 'dark' ? "/logos/github-mark-white.svg" : "/logos/github-mark.svg" },
       ]
 
-  const projects = [
-  {
-    title: "Portfolio",
-    description: "A dynamic portfolio that showcases my projects and skills in web development. Explore my creations and see how I apply modern technologies to solve real-world problems.",
-    image: "/previews/portfolio.png?height=200&width=300",
-    technologies: ["Nextjs", "JavaScript", "HTML", "CSS"],
-    liveUrl: "https://joao-ac.github.io/",
-    githubUrl: "https://github.com/joao-ac/joao-ac.github.io"
-  },
-  {
-    title: "Task List - Prototype",
-    description: "An in-development application that allows users to manage their tasks intuitively. With a clean interface and practical features, the Task List makes everyday organization easier.",
-    image: "/previews/tarefas.png?height=200&width=300",
-    technologies: ["Python", "Flask", "SQLite", "JavaScript", "HTML", "CSS"],
-    githubUrl: "https://github.com/joao-ac/app_lista_de_tarefas"
-  },
-  {
-    title: "YouTube Shorts Video Summarization",
-    description: "An application that uses artificial intelligence to provide concise summaries of YouTube Shorts videos. Perfect for those who want to quickly grasp key information without watching the entire video.",
-    image: "/previews/nlw.png?height=200&width=300",
-    technologies: ["React", "Vite", "Nodejs", "Express", "ytdl-core", "@xenova/transformers", "CORS", "Axios"],
-    githubUrl: "https://github.com/joao-ac/NLW-ai"
-  }
+    const projects = [
+      {
+        title: "NLW Connect 2025",
+        description: "Event registering system developed during a Rocketseat course, complete with CRUD operations.",
+        image: "/previews/nlw-connect.png?height=200&width=300",
+        technologies: ["Java", "Spring Boot", "Docker"],
+        githubUrl: "https://github.com/joao-ac/NLW-ai"
+      },
+      {
+        title: "Task List - Prototype",
+        description: "An in-development application that allows users to manage their tasks intuitively. With a clean interface and practical features, the Task List makes everyday organization easier.",
+        image: "/previews/tarefas.png?height=200&width=300",
+        technologies: ["Python", "Flask", "SQLite", "JavaScript", "HTML", "CSS"],
+        githubUrl: "https://github.com/joao-ac/app_lista_de_tarefas"
+      },
+      {
+        title: "Portfolio",
+        description: "A dynamic portfolio that showcases my projects and skills in web development. Explore my creations and see how I apply modern technologies to solve real-world problems.",
+        image: "/previews/portfolio.png?height=200&width=300",
+        technologies: ["Nextjs", "JavaScript", "HTML", "CSS"],
+        liveUrl: "https://joao-ac.github.io/",
+        githubUrl: "https://github.com/joao-ac/joao-ac.github.io"
+      },
+      {
+        title: "YouTube Shorts Video Summarization",
+        description: "An application that uses artificial intelligence to provide concise summaries of YouTube Shorts videos. Perfect for those who want to quickly grasp key information without watching the entire video.",
+        image: "/previews/nlw.png?height=200&width=300",
+        technologies: ["React", "Vite", "Nodejs", "Express", "ytdl-core", "@xenova/transformers", "CORS", "Axios"],
+        githubUrl: "https://github.com/joao-ac/NLW-ai"
+      }
   ]
 
   const education = [
@@ -104,7 +111,7 @@ export default function Portfolio() {
   },
   {
     logo: "/logos/rocketseat.png",
-    title: "NLW AI - Rocketseat",
+    title: "NLW AI",
     institution: "Rocketseat",
     graduation: "2023",
     description: "Participated in the NLW AI program, where I developed an application for summarizing YouTube Shorts videos using artificial intelligence models, enhancing my skills in React, Node.js, and AI integration."
@@ -129,6 +136,20 @@ export default function Portfolio() {
     institution: "Cisco",
     graduation: "2024",
     description: "Completed an introductory course by Cisco and OpenEDG Python Institute, where I learned the fundamentals of programming, mastered Python syntax and semantics, and gained hands-on experience solving coding challenges using the Python Standard Library."
+  },
+  {
+    logo: "/logos/udemy.png",
+    title: "Looker and LookML",
+    institution: "Udemy",
+    graduation: "2024",
+    description: "Looker and LookML course, from basic to advanced, going through interface, editing looks, building dashboards, creating custom dimensions, views, using explore and development environment."
+  },
+  {
+    logo: "/logos/rocketseat.png",
+    title: "NLW Connect",
+    institution: "Rocketseat",
+    graduation: "2025",
+    description: "Participated in the NLW Connect program, where I developed an event subscription and indication system, with CRUD operations. During this course, i had the oportunity to improve my Java skills, and familiarize myself with the Spring Boot framework."
   }
   ];
 
