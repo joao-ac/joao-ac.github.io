@@ -8,11 +8,14 @@ import { Phone } from 'lucide-react'
 import { Badge } from "@/components/ui/badge"
 import { Code2, Github, Linkedin, Mail, MenuIcon, Moon, Sun, X, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
+import { LanguageToggle } from '@/components/LanguageToggle'
+import { useTranslation } from '@/hooks/useTranslation'
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const { t } = useTranslation()
 
   useEffect(() => setMounted(true), [])
 
@@ -71,30 +74,30 @@ export default function Portfolio() {
 
     const projects = [
       {
-        title: "NLW Connect 2025",
-        description: "Event registering system developed during a Rocketseat course, complete with CRUD operations.",
+        title: t('projects.nlwConnect.title'),
+        description: t('projects.nlwConnect.description'),
         image: "/previews/nlw-connect.png?height=200&width=300",
         technologies: ["Java", "Spring Boot", "Docker"],
         githubUrl: "https://github.com/joao-ac/NLW-ai"
       },
       {
-        title: "Task List - Prototype",
-        description: "An in-development application that allows users to manage their tasks intuitively. With a clean interface and practical features, the Task List makes everyday organization easier.",
+        title: t('projects.taskList.title'),
+        description: t('projects.taskList.description'),
         image: "/previews/tarefas.png?height=200&width=300",
         technologies: ["Python", "Flask", "SQLite", "JavaScript", "HTML", "CSS"],
         githubUrl: "https://github.com/joao-ac/app_lista_de_tarefas"
       },
       {
-        title: "Portfolio",
-        description: "A dynamic portfolio that showcases my projects and skills in web development. Explore my creations and see how I apply modern technologies to solve real-world problems.",
+        title: t('projects.portfolio.title'),
+        description: t('projects.portfolio.description'),
         image: "/previews/portfolio.png?height=200&width=300",
         technologies: ["Nextjs", "JavaScript", "HTML", "CSS"],
         liveUrl: "https://joao-ac.github.io/",
         githubUrl: "https://github.com/joao-ac/joao-ac.github.io"
       },
       {
-        title: "YouTube Shorts Video Summarization",
-        description: "An application that uses artificial intelligence to provide concise summaries of YouTube Shorts videos. Perfect for those who want to quickly grasp key information without watching the entire video.",
+        title: t('projects.youtubeShorts.title'),
+        description: t('projects.youtubeShorts.description'),
         image: "/previews/nlw.png?height=200&width=300",
         technologies: ["React", "Vite", "Nodejs", "Express", "ytdl-core", "@xenova/transformers", "CORS", "Axios"],
         githubUrl: "https://github.com/joao-ac/NLW-ai"
@@ -104,110 +107,128 @@ export default function Portfolio() {
   const education = [
   {
     logo: "/logos/uninter.png",
-    title: "Analysis and Systems Development",
+    title: "Análise e Desenvolvimento de Sistemas",
     institution: "Centro Universitário Internacional Uninter",
-    graduation: "Expected Graduation: 2025",
-    description: "Pursuing a degree in Systems Analysis and Development, focusing on software development, data structures, and modern web technologies. Expanding my skills in programming and system design."
+    graduation: t('education.graduation', { year: '2025' }),
+    description: t('education.description.uninter')
   },
   {
     logo: "/logos/rocketseat.png",
     title: "NLW AI",
     institution: "Rocketseat",
     graduation: "2023",
-    description: "Participated in the NLW AI program, where I developed an application for summarizing YouTube Shorts videos using artificial intelligence models, enhancing my skills in React, Node.js, and AI integration."
+    description: t('education.description.nlwAI')
   },
   {
     logo: "/logos/cisco.png",
     title: "Computer Hardware Basics",
     institution: "Cisco",
     graduation: "2023",
-    description: "Completed the Computer Hardware Basics course, covering fundamental concepts of hardware components, troubleshooting, and system maintenance, providing a solid foundation in computer hardware."
+    description: t('education.description.hardwareBasics')
   },
   {
     logo: "/logos/cisco.png",
     title: "Introduction to Data Science",
     institution: "Cisco",
     graduation: "2024",
-    description: "In the Introduction to Data Science course, I learned the basics of data science and analysis, exploring how machine learning influences fields like business, healthcare, and education. I gained skills in deriving insights for data-driven decision-making, a valuable asset in today's job market."
+    description: t('education.description.dataScience')
   },
   {
     logo: "/logos/cisco.png",
     title: "Python Essentials 1",
     institution: "Cisco",
     graduation: "2024",
-    description: "Completed an introductory course by Cisco and OpenEDG Python Institute, where I learned the fundamentals of programming, mastered Python syntax and semantics, and gained hands-on experience solving coding challenges using the Python Standard Library."
+    description: t('education.description.pythonEssentials')
   },
   {
     logo: "/logos/udemy.png",
     title: "Looker and LookML",
     institution: "Udemy",
     graduation: "2024",
-    description: "Looker and LookML course, from basic to advanced, going through interface, editing looks, building dashboards, creating custom dimensions, views, using explore and development environment."
+    description: t('education.description.looker')
   },
   {
     logo: "/logos/rocketseat.png",
     title: "NLW Connect",
     institution: "Rocketseat",
     graduation: "2025",
-    description: "Participated in the NLW Connect program, where I developed an event subscription and indication system, with CRUD operations. During this course, i had the oportunity to improve my Java skills, and familiarize myself with the Spring Boot framework."
+    description: t('education.description.nlwConnect')
   }
   ];
 
   return (
     <>
     <div className="min-h-screen bg-background text-foreground">
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div className="container flex h-14 items-center">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
+    <div className="container flex h-16 items-center">
     <div className="mr-4 flex">
     <a className="mr-6 flex items-center space-x-2" href="/">
     <Code2 className="h-6 w-6" />
-    <span className="font-bold sm:inline-block">DevPortfolio</span>
+    <span className="font-bold sm:inline-block text-lg">DevPortfolio</span>
     </a>
     <nav className="flex items-center space-x-6 text-sm font-medium">
     <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#about" onClick={() => scrollToSection('#about')}>
-    About me
+    {t('navigation.about')}
     </a>
     <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#education" onClick={() => scrollToSection('#education')}>
-    Education
+    {t('navigation.education')}
     </a>
     <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#skills" onClick={() => scrollToSection('#skills')}>
-    Skills
+    {t('navigation.skills')}
     </a>
     <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#projects" onClick={() => scrollToSection('#projects')}>
-    Projects
+    {t('navigation.projects')}
     </a>
     <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#contact" onClick={() => scrollToSection('#contact')}>
-    Contact
+    {t('navigation.contact')}
     </a>
     </nav>
     </div>
-    <div className="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
+    <div className="flex flex-1 items-center justify-end space-x-4">
+    <LanguageToggle />
     <Button className="sm:hidden transition-transform duration-300" variant="ghost" size="icon" onClick={toggleMenu}>
     {isMenuOpen ? <X className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
     </Button>
-    <Button className="transition-transform duration-300 transform" variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
-    {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+    <Button 
+      className="transition-transform duration-300 transform flex items-center gap-2" 
+      variant="ghost" 
+      onClick={toggleTheme} 
+      aria-label="Toggle theme"
+    >
+      {theme === 'dark' ? (
+        <>
+          <Moon className="h-5 w-5" />
+          <span className="hidden sm:inline">{t('theme.dark')}</span>
+        </>
+      ) : (
+        <>
+          <Sun className="h-5 w-5" />
+          <span className="hidden sm:inline">{t('theme.light')}</span>
+        </>
+      )}
     </Button>
     </div>
     </div>
     </header>
 
     {isMenuOpen && (
-      <div className="fixed inset-0 z-40 bg-background sm:hidden">
+      <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sm:hidden">
       <nav className="flex flex-col items-center justify-center h-full space-y-8 text-lg">
-      <a href="#about" onClick={() => { scrollToSection('#about'); toggleMenu(); }}>About me</a>
-      <a href="#education" onClick={() => { scrollToSection('#skills'); toggleMenu(); }}>Education</a>
-      <a href="#skills" onClick={() => { scrollToSection('#skills'); toggleMenu(); }}>Skills</a>
-      <a href="#projects" onClick={() => { scrollToSection('#projects'); toggleMenu(); }}>Projects</a>
-      <a href="#contact" onClick={() => { scrollToSection('#contact'); toggleMenu(); }}>Contact</a>
+      <a href="#about" onClick={() => { scrollToSection('#about'); toggleMenu(); }}>{t('navigation.about')}</a>
+      <a href="#education" onClick={() => { scrollToSection('#skills'); toggleMenu(); }}>{t('navigation.education')}</a>
+      <a href="#skills" onClick={() => { scrollToSection('#skills'); toggleMenu(); }}>{t('navigation.skills')}</a>
+      <a href="#projects" onClick={() => { scrollToSection('#projects'); toggleMenu(); }}>{t('navigation.projects')}</a>
+      <a href="#contact" onClick={() => { scrollToSection('#contact'); toggleMenu(); }}>{t('navigation.contact')}</a>
       </nav>
       </div>
       )}
 
-    <main className="container mx-auto px-4 py-8">
-    <section id="about" className="mb-16 text-center">
-    <h1 className="text-3xl font-bold mb-4">About me</h1>
-    <p className="mb-6 text-lg leading-relaxed max-w-[900px] mx-auto">I’m João Antonio, a Systems Analysis and Development student with experience in Python, Java, Node.js and MySQL. I’m currently focusing on Python for data extraction and software development, and I also have front-end experience with React and Next.js. I’m looking for opportunities to apply my skills and contribute to new projects. </p>
+    <main className="container mx-auto px-4 py-12 space-y-24">
+    <section id="about" className="text-center">
+    <h1 className="text-4xl font-bold mb-6">{t('about.title')}</h1>
+    <p className="mb-8 text-lg leading-relaxed max-w-[900px] mx-auto">
+      {t('about.description')}
+    </p>
     <div className="flex justify-center space-x-4">
     <Button className="transition-colors" variant="link" size="icon" as="a" href="https://github.com/joao-ac" target="_blank" rel="noopener noreferrer">
     <Github className="h-4 w-4" />
@@ -220,181 +241,151 @@ export default function Portfolio() {
     </div>
     </section>
 
-<section id="education" className="mb-16">
-  <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="education" className="space-y-8">
+    <h2 className="text-4xl font-bold text-center">{t('education.title')}</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {education.map((edu, index) => (
-      <Card key={index} className="transition-transform hover:-translate-y-2 hover:shadow-lg">
-        <CardHeader className="flex flex-col justify-stretch">
-          <div className="flex mb-2">
-            <img
-              src={edu.logo} // Ensure you have a logo property in your education data
-              alt={`${edu.institution} Logo`}
-              className="h-12 w-12 mr-5" // Adjust size as necessary
-            />
-            <div className="flex flex-col justify-stretch">
-              <CardTitle>{edu.title}</CardTitle>
-              <CardDescription>{edu.institution}</CardDescription>
-              <CardDescription>{edu.graduation}</CardDescription>
+      <Card key={index} className="transition-transform hover:-translate-y-2 hover:shadow-lg h-full flex flex-col">
+        <CardHeader className="flex flex-col justify-stretch pb-4">
+          <div className="flex mb-4">
+            <div className="w-16 h-16 relative mr-4 flex-shrink-0">
+              <Image
+                src={edu.logo}
+                alt={edu.institution}
+                fill
+                className="object-contain"
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              <CardTitle className="text-xl mb-1">{edu.title}</CardTitle>
+              <CardDescription className="text-base mb-1">{edu.institution}</CardDescription>
+              <CardDescription className="text-base">{edu.graduation}</CardDescription>
             </div>
           </div>
         </CardHeader>
-        <CardContent>
-          <p className="text-lg">{edu.description}</p>
+        <CardContent className="flex-grow">
+          <p className="text-base leading-relaxed">{edu.description}</p>
         </CardContent>
       </Card>
     ))}
-  </div>
-</section>
+    </div>
+    </section>
 
-    {/*<section id="education" className="mb-16">
-    <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {education.map((edu, index) => (
-      <Card key={index} className="transition-transform hover:-translate-y-2 hover:shadow-lg">
-      <CardHeader className="flex flex-col items-center">
-      <CardTitle>{edu.title}</CardTitle>
-      <CardDescription>{edu.institution}</CardDescription>
-      <CardDescription>{edu.graduation}</CardDescription>
+    <section id="skills" className="space-y-8">
+    <h2 className="text-4xl font-bold text-center">{t('navigation.skills')}</h2>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+    {skills.map((skill, index) => (
+      <div key={index} className="flex flex-col items-center p-6 bg-card rounded-lg border shadow-sm transition-transform hover:-translate-y-2 hover:shadow-lg">
+        <div className="w-16 h-16 relative mb-4">
+          <Image
+            src={skill.logo}
+            alt={skill.name}
+            fill
+            className="object-contain"
+          />
+        </div>
+        <span className="text-base font-medium">{skill.name}</span>
+      </div>
+    ))}
+    </div>
+    </section>
+
+    <section id="projects" className="space-y-8">
+    <h2 className="text-4xl font-bold text-center">{t('projects.title')}</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {projects.map((project, index) => (
+      <Card key={index} className="transition-transform hover:-translate-y-2 hover:shadow-lg h-full flex flex-col">
+        <CardHeader className="pb-4">
+          <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
+        </CardHeader>
+        <CardContent className="flex-grow">
+          <div className="relative w-full h-48 mb-6">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover rounded-lg"
+            />
+          </div>
+          <p className="text-base mb-6 leading-relaxed">{project.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.technologies.map((tech, i) => (
+              <Badge key={i} variant="secondary">{tech}</Badge>
+            ))}
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-end gap-2 pt-4">
+          {project.liveUrl && (
+            <Button asChild variant="outline" size="sm">
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="h-4 w-4 mr-2" />
+                Live
+              </a>
+            </Button>
+          )}
+          <Button asChild variant="outline" size="sm">
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+              <Github className="h-4 w-4 mr-2" />
+              GitHub
+            </a>
+          </Button>
+        </CardFooter>
+      </Card>
+    ))}
+    </div>
+    </section>
+
+    <section id="contact" className="flex flex-col items-center space-y-8">
+    <h2 className="text-4xl font-bold text-center">{t('contact.title')}</h2>
+    <Card className="w-full max-w-2xl">
+      <CardHeader>
+        <CardTitle className="text-xl">{t('contact.subtitle')}</CardTitle>
       </CardHeader>
       <CardContent>
-      <p className="text-lg">{edu.description}</p>
+        <div className="space-y-6">
+          <div className="flex items-center space-x-3">
+            <Mail className="h-6 w-6 text-primary" />
+            <span className="text-lg">{t('contact.email')}</span>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Linkedin className="h-6 w-6 text-primary" />
+            <a
+              href="https://www.linkedin.com/in/jo%C3%A3o-ant%C3%B4nio-correia-409082292/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg hover:underline"
+            >
+              {t('contact.linkedin')}
+            </a>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Github className="h-6 w-6 text-primary" />
+            <a
+              href="https://github.com/joao-ac"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg hover:underline"
+            >
+              {t('contact.github')}
+            </a>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Phone className="h-6 w-6 text-primary" />
+            <a
+              href="https://wa.me/5545999851704"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg hover:underline"
+            >
+              {t('contact.phone')}
+            </a>
+          </div>
+        </div>
       </CardContent>
-      </Card>
-      ))}
-    </div>
-    </section>*/}
-
-    <section id="skills" className="mb-16">
-    <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-    {skills.map((skill) => (
-      <Card key={skill.name} className="flex flex-col items-center transition-transform hover:-translate-y-2 hover:shadow-lg">
-      <CardHeader className="flex flex-col items-center">
-      <div className="w-16 h-16 mb-2">
-      <Image
-      src={skill.logo}
-      alt={`${skill.name} logo`}
-      width={64}
-      height={64}
-      className="object-contain"
-      />
-      </div>
-      <CardTitle className="text-center">{skill.name}</CardTitle>
-      </CardHeader>
-      </Card>
-      ))}
-    </div>
-    </section>
-
-    <section id="projects" className="mb-16">
-    <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {projects.map((project, index) => (
-      <Card key={index} className="flex flex-col h-full">
-      <CardHeader>
-      <CardTitle>{project.title}</CardTitle>
-      <CardDescription className="min-h-[100px]">{project.description}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-grow">
-      <div className="aspect-video bg-muted mb-4">
-      <Image
-      src={project.image}
-      alt={project.title}
-      width={900}
-      height={600}
-      className="object-cover w-full h-full"
-      />
-      </div>
-      <div className="flex flex-wrap gap-2 mb-4">
-      {project.technologies.map((tech, techIndex) => (
-        <Badge key={techIndex} variant="secondary">{tech}</Badge>
-        ))}
-      </div>
-      </CardContent>
-      <CardFooter className="mt-auto flex justify-between">
-      {project.liveUrl && (
-        <Button as="a" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-        <ExternalLink className="mr-2 h-4 w-4" />
-        Live Demo
-        </Button>
-        )}
-      <Button variant="link" as="a" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-      <Github className="mr-2 h-4 w-4" />
-      View Code
-      </Button>
-      </CardFooter>
-      </Card>
-      ))}
-    </div>
-    </section>
-
-    <section id="contact" className="mb-16 flex flex-col items-center">
-    <h2 className="text-3xl font-bold mb-8 text-center">Contact Me</h2>
-    <Card className="flex flex-col items-center">
-    <CardHeader>
-    <CardTitle>Feel free to reach out through any of the platforms below:</CardTitle>
-    </CardHeader>
-    <CardContent>
-    <div className="space-y-4">
-    <div className="flex items-center space-x-2">
-    <Mail className="h-5 w-5 text-primary" />
-    <span className="text-lg">joao.ac1406@gmail.com</span>
-    </div>
-    <div className="flex items-center space-x-2">
-    <Linkedin className="h-5 w-5 text-primary" />
-    <a
-    href="https://www.linkedin.com/in/jo%C3%A3o-ant%C3%B4nio-correia-409082292/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-lg hover:underline"
-    >
-    LinkedIn Profile
-    </a>
-    </div>
-    <div className="flex items-center space-x-2">
-    <Github className="h-5 w-5 text-primary" />
-    <a
-    href="https://github.com/joao-ac"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-lg hover:underline"
-    >
-    GitHub Profile
-    </a>
-    </div>
-    <div className="flex items-center space-x-2">
-    <Phone className="h-5 w-5 text-primary" />
-    <span className="text-lg">+55 (45) 99985-1704</span>
-    </div>
-    </div>
-    </CardContent>
     </Card>
     </section>
     </main>
-
-    <footer className="border-t py-6 md:py-0">
-    <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-    <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-    © 2024 João Antonio Correia. All rights reserved.
-    </p>
-    <div className="flex items-center space-x-1">
-    <Button variant="ghost" size="icon" as="a" href="mailto:joao.ac1406@gmail.com">
-    <Mail className="h-4 w-4" />
-    <span className="sr-only">Email</span>
-    </Button>
-    <Button variant="ghost" size="icon" as="a" href="https://github.com/joao-ac" target="_blank" rel="noopener noreferrer">
-    <Github className="h-4 w-4" />
-    <span className="sr-only">GitHub</span>
-    </Button>
-    <Button variant="ghost" size="icon" as="a" href="https://www.linkedin.com/in/jo%C3%A3o-ant%C3%B4nio-correia-409082292/" target="_blank" rel="noopener noreferrer">
-    <Linkedin className="h-4 w-4" />
-    <span className="sr-only">LinkedIn</span>
-    </Button>
-    </div>
-    </div>
-    </footer>
     </div>
     </>
-    )
+  );
 }
