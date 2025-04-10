@@ -8,7 +8,7 @@ export const ptBR = {
   },
   about: {
     title: "Sobre mim",
-    description: "Sou João Antonio, estudante de Análise e Desenvolvimento de Sistemas com experiência em Python, Java, Node.js e MySQL. Atualmente estou focado em Python para extração de dados e desenvolvimento de software, e também tenho experiência em front-end com React e Next.js. Estou em busca de oportunidades para aplicar minhas habilidades e contribuir para novos projetos."
+    description: "Sou João Antônio, estudante de Análise e Desenvolvimento de Sistemas com experiência em Python, Java, Node.js e MySQL. Atualmente estou focado em Python para extração de dados e desenvolvimento de software, e também tenho experiência em front-end com React e Next.js. Estou em busca de oportunidades para aplicar minhas habilidades e contribuir para novos projetos."
   },
   education: {
     title: "Educação",

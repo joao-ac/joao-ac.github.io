@@ -8,7 +8,7 @@ export const en = {
   },
   about: {
     title: "About me",
-    description: "I'm João Antonio, a Systems Analysis and Development student with experience in Python, Java, Node.js and MySQL. I'm currently focusing on Python for data extraction and software development, and I also have front-end experience with React and Next.js. I'm looking for opportunities to apply my skills and contribute to new projects."
+    description: "I'm João Antônio, a Systems Analysis and Development student with experience in Python, Java, Node.js and MySQL. I'm currently focusing on Python for data extraction and software development, and I also have front-end experience with React and Next.js. I'm looking for opportunities to apply my skills and contribute to new projects."
   },
   education: {
     title: "Education",
