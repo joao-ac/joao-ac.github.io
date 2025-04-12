@@ -11,7 +11,7 @@ export function LanguageToggle() {
       className="text-foreground flex items-center gap-2"
     >
       <span className="text-shadow-sm">{language === 'en' ? '🇺🇸' : '🇧🇷'}</span>
-      <span className="hidden sm:inline">{language === 'en' ? 'EN' : 'PT-BR'}</span>
+      <span className="hidden sm:inline">{language === 'en' ? 'EN' : 'BR'}</span>
     </button>
   );
 } 

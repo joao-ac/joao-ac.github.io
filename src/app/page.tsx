@@ -101,127 +101,257 @@ export default function Portfolio() {
         image: "/previews/nlw.png?height=200&width=300",
         technologies: ["React", "Vite", "Nodejs", "Express", "ytdl-core", "@xenova/transformers", "CORS", "Axios"],
         githubUrl: "https://github.com/joao-ac/NLW-ai"
+      },
+      {
+        title: t('projects.pygame.title'),
+        description: t('projects.pygame.description'),
+        image: "/previews/pygame.png?height=200&width=300",
+        technologies: ["Python", "Pygame", "Object-Oriented Programming"],
+        githubUrl: "https://github.com/joao-ac/pygame-project"
+      },
+      {
+        title: t('projects.spark.title'),
+        description: t('projects.spark.description'),
+        image: "/previews/spark.png?height=200&width=300",
+        technologies: ["Apache Spark", "Python", "Data Analysis", "Distributed Computing"],
+        githubUrl: "https://github.com/joao-ac/spark-project"
       }
-  ]
+    ]
 
   const education = [
-  {
-    logo: "/logos/uninter.png",
-    title: "Análise e Desenvolvimento de Sistemas",
-    institution: "Centro Universitário Internacional Uninter",
-    graduation: t('education.graduation', { year: '2025' }),
-    description: t('education.description.uninter')
-  },
-  {
-    logo: "/logos/rocketseat.png",
-    title: "NLW AI",
-    institution: "Rocketseat",
-    graduation: "2023",
-    description: t('education.description.nlwAI')
-  },
-  {
-    logo: "/logos/cisco.png",
-    title: "Computer Hardware Basics",
-    institution: "Cisco",
-    graduation: "2023",
-    description: t('education.description.hardwareBasics')
-  },
-  {
-    logo: "/logos/cisco.png",
-    title: "Introduction to Data Science",
-    institution: "Cisco",
-    graduation: "2024",
-    description: t('education.description.dataScience')
-  },
-  {
-    logo: "/logos/cisco.png",
-    title: "Python Essentials 1",
-    institution: "Cisco",
-    graduation: "2024",
-    description: t('education.description.pythonEssentials')
-  },
-  {
-    logo: "/logos/udemy.png",
-    title: "Looker and LookML",
-    institution: "Udemy",
-    graduation: "2024",
-    description: t('education.description.looker')
-  },
-  {
-    logo: "/logos/rocketseat.png",
-    title: "NLW Connect",
-    institution: "Rocketseat",
-    graduation: "2025",
-    description: t('education.description.nlwConnect')
-  }
+    {
+      logo: "/logos/uninter.png",
+      title: "Análise e Desenvolvimento de Sistemas",
+      institution: "Centro Universitário Internacional Uninter",
+      graduation: t('education.graduation', { year: '2025' }),
+      description: t('education.description.uninter')
+    }
+  ];
+
+  const coursesAndCertificates = [
+    {
+      logo: "/logos/rocketseat.png",
+      title: "NLW AI",
+      institution: "Rocketseat",
+      graduation: "2023",
+      description: t('education.description.nlwAI')
+    },
+    {
+      logo: "/logos/cisco.png",
+      title: "Computer Hardware Basics",
+      institution: "Cisco",
+      graduation: "2023",
+      description: t('education.description.hardwareBasics')
+    },
+    {
+      logo: "/logos/cisco.png",
+      title: "Introduction to Data Science",
+      institution: "Cisco",
+      graduation: "2024",
+      description: t('education.description.dataScience')
+    },
+    {
+      logo: "/logos/cisco.png",
+      title: "Python Essentials 1",
+      institution: "Cisco",
+      graduation: "2024",
+      description: t('education.description.pythonEssentials')
+    },
+    {
+      logo: "/logos/udemy.png",
+      title: "Looker and LookML",
+      institution: "Udemy",
+      graduation: "2024",
+      description: t('education.description.looker')
+    },
+    {
+      logo: "/logos/rocketseat.png",
+      title: "NLW Connect",
+      institution: "Rocketseat",
+      graduation: "2025",
+      description: t('education.description.nlwConnect')
+    },
+    {
+      logo: "/logos/google-looker.jpg",
+      title: "Google Looker Certification",
+      institution: "Google Cloud",
+      graduation: "2025",
+      description: t('courses.description.googleLooker')
+    }
+  ];
+
+  const languages = [
+    {
+      name: t('languages.portuguese.name'),
+      level: t('languages.portuguese.level'),
+      proficiency: parseInt(t('languages.portuguese.proficiency'))
+    },
+    {
+      name: t('languages.english.name'),
+      level: t('languages.english.level'),
+      proficiency: parseInt(t('languages.english.proficiency'))
+    },
+    {
+      name: t('languages.spanish.name'),
+      level: t('languages.spanish.level'),
+      proficiency: parseInt(t('languages.spanish.proficiency'))
+    }
   ];
 
   return (
     <>
     <div className="min-h-screen bg-background text-foreground">
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
-    <div className="container flex h-16 items-center">
-    <div className="mr-4 flex">
-    <a className="mr-6 flex items-center space-x-2" href="/">
-    <Code2 className="h-6 w-6" />
-    <span className="font-bold sm:inline-block text-lg">DevPortfolio</span>
-    </a>
-    <nav className="flex items-center space-x-6 text-sm font-medium">
-    <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#about" onClick={() => scrollToSection('#about')}>
-    {t('navigation.about')}
-    </a>
-    <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#education" onClick={() => scrollToSection('#education')}>
-    {t('navigation.education')}
-    </a>
-    <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#skills" onClick={() => scrollToSection('#skills')}>
-    {t('navigation.skills')}
-    </a>
-    <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#projects" onClick={() => scrollToSection('#projects')}>
-    {t('navigation.projects')}
-    </a>
-    <a className="hidden transition-colors hover:text-foreground/80 text-foreground/60 sm:inline-block" href="#contact" onClick={() => scrollToSection('#contact')}>
-    {t('navigation.contact')}
-    </a>
-    </nav>
-    </div>
-    <div className="flex flex-1 items-center justify-end space-x-4">
-    <LanguageToggle />
-    <Button className="sm:hidden transition-transform duration-300" variant="ghost" size="icon" onClick={toggleMenu}>
-    {isMenuOpen ? <X className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
-    </Button>
-    <Button 
-      className="transition-transform duration-300 transform flex items-center gap-2" 
-      variant="ghost" 
-      onClick={toggleTheme} 
-      aria-label="Toggle theme"
-    >
-      {theme === 'dark' ? (
-        <>
-          <Moon className="h-5 w-5" />
-          <span className="hidden sm:inline">{t('theme.dark')}</span>
-        </>
-      ) : (
-        <>
-          <Sun className="h-5 w-5" />
-          <span className="hidden sm:inline">{t('theme.light')}</span>
-        </>
-      )}
-    </Button>
-    </div>
-    </div>
-    </header>
-
-    {isMenuOpen && (
-      <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sm:hidden">
-      <nav className="flex flex-col items-center justify-center h-full space-y-8 text-lg">
-      <a href="#about" onClick={() => { scrollToSection('#about'); toggleMenu(); }}>{t('navigation.about')}</a>
-      <a href="#education" onClick={() => { scrollToSection('#skills'); toggleMenu(); }}>{t('navigation.education')}</a>
-      <a href="#skills" onClick={() => { scrollToSection('#skills'); toggleMenu(); }}>{t('navigation.skills')}</a>
-      <a href="#projects" onClick={() => { scrollToSection('#projects'); toggleMenu(); }}>{t('navigation.projects')}</a>
-      <a href="#contact" onClick={() => { scrollToSection('#contact'); toggleMenu(); }}>{t('navigation.contact')}</a>
-      </nav>
+      <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
+        <div className="flex items-center gap-6">
+          <a className="flex items-center space-x-2" href="/">
+            <Code2 className="h-6 w-6" />
+            <span className="font-bold sm:inline-block text-lg">DevPortfolio</span>
+          </a>
+          <div className="relative hidden sm:block">
+            <Button className="transition-transform duration-300" variant="ghost" size="icon" onClick={toggleMenu}>
+              {isMenuOpen ? <X className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+            </Button>
+            {isMenuOpen && (
+              <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-background border">
+                <div className="py-1">
+                  <a
+                    href="#about"
+                    onClick={() => { scrollToSection('#about'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.about')}
+                  </a>
+                  <a
+                    href="#education"
+                    onClick={() => { scrollToSection('#education'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.education')}
+                  </a>
+                  <a
+                    href="#courses"
+                    onClick={() => { scrollToSection('#courses'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.courses')}
+                  </a>
+                  <a
+                    href="#languages"
+                    onClick={() => { scrollToSection('#languages'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.languages')}
+                  </a>
+                  <a
+                    href="#skills"
+                    onClick={() => { scrollToSection('#skills'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.skills')}
+                  </a>
+                  <a
+                    href="#projects"
+                    onClick={() => { scrollToSection('#projects'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.projects')}
+                  </a>
+                  <a
+                    href="#contact"
+                    onClick={() => { scrollToSection('#contact'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.contact')}
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="flex items-center gap-4 mr-4">
+          <LanguageToggle />
+          <Button 
+            className="transition-transform duration-300 transform flex items-center gap-2 min-w-[40px]" 
+            variant="ghost" 
+            onClick={toggleTheme} 
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? (
+              <>
+                <Moon className="h-5 w-5" />
+                <span className="hidden sm:inline">{t('theme.dark')}</span>
+              </>
+            ) : (
+              <>
+                <Sun className="h-5 w-5" />
+                <span className="hidden sm:inline">{t('theme.light')}</span>
+              </>
+            )}
+          </Button>
+          <div className="relative sm:hidden">
+            <Button className="transition-transform duration-300" variant="ghost" size="icon" onClick={toggleMenu}>
+              {isMenuOpen ? <X className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+            </Button>
+            {isMenuOpen && (
+              <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-background border mr-4">
+                <div className="py-1">
+                  <a
+                    href="#about"
+                    onClick={() => { scrollToSection('#about'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.about')}
+                  </a>
+                  <a
+                    href="#education"
+                    onClick={() => { scrollToSection('#education'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.education')}
+                  </a>
+                  <a
+                    href="#courses"
+                    onClick={() => { scrollToSection('#courses'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.courses')}
+                  </a>
+                  <a
+                    href="#languages"
+                    onClick={() => { scrollToSection('#languages'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.languages')}
+                  </a>
+                  <a
+                    href="#skills"
+                    onClick={() => { scrollToSection('#skills'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.skills')}
+                  </a>
+                  <a
+                    href="#projects"
+                    onClick={() => { scrollToSection('#projects'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.projects')}
+                  </a>
+                  <a
+                    href="#contact"
+                    onClick={() => { scrollToSection('#contact'); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
+                  >
+                    {t('navigation.contact')}
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-      )}
+    </header>
 
     <main className="container mx-auto px-4 py-12 space-y-24">
     <section id="about" className="text-center">
@@ -242,33 +372,90 @@ export default function Portfolio() {
     </section>
 
     <section id="education" className="space-y-8">
-    <h2 className="text-4xl font-bold text-center">{t('education.title')}</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    {education.map((edu, index) => (
-      <Card key={index} className="transition-transform hover:-translate-y-2 hover:shadow-lg h-full flex flex-col">
-        <CardHeader className="flex flex-col justify-stretch pb-4">
-          <div className="flex mb-4">
-            <div className="w-16 h-16 relative mr-4 flex-shrink-0">
-              <Image
-                src={edu.logo}
-                alt={edu.institution}
-                fill
-                className="object-contain"
-              />
-            </div>
-            <div className="flex flex-col justify-center">
-              <CardTitle className="text-xl mb-1">{edu.title}</CardTitle>
-              <CardDescription className="text-base mb-1">{edu.institution}</CardDescription>
-              <CardDescription className="text-base">{edu.graduation}</CardDescription>
-            </div>
-          </div>
-        </CardHeader>
-        <CardContent className="flex-grow">
-          <p className="text-base leading-relaxed">{edu.description}</p>
-        </CardContent>
-      </Card>
-    ))}
-    </div>
+      <h2 className="text-4xl font-bold text-center">{t('education.title')}</h2>
+      <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+        {education.map((edu, index) => (
+          <Card key={index} className="transition-transform hover:-translate-y-2 hover:shadow-lg h-full flex flex-col">
+            <CardHeader className="flex flex-col justify-stretch pb-4">
+              <div className="flex mb-4">
+                <div className="w-16 h-16 relative mr-4 flex-shrink-0">
+                  <Image
+                    src={edu.logo}
+                    alt={edu.institution}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <CardTitle className="text-xl mb-1">{edu.title}</CardTitle>
+                  <CardDescription className="text-base mb-1">{edu.institution}</CardDescription>
+                  <CardDescription className="text-base">{edu.graduation}</CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <p className="text-base leading-relaxed">{edu.description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </section>
+
+    <section id="courses" className="space-y-8">
+      <h2 className="text-4xl font-bold text-center">{t('courses.title')}</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {coursesAndCertificates.map((course, index) => (
+          <Card key={index} className="transition-transform hover:-translate-y-2 hover:shadow-lg h-full flex flex-col">
+            <CardHeader className="flex flex-col justify-stretch pb-4">
+              <div className="flex mb-4">
+                <div className="w-16 h-16 relative mr-4 flex-shrink-0">
+                  <Image
+                    src={course.logo}
+                    alt={course.institution}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <CardTitle className="text-xl mb-1">{course.title}</CardTitle>
+                  <CardDescription className="text-base mb-1">{course.institution}</CardDescription>
+                  <CardDescription className="text-base">{course.graduation}</CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <p className="text-base leading-relaxed">{course.description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </section>
+
+    <section id="languages" className="space-y-8">
+      <h2 className="text-4xl font-bold text-center">{t('languages.title')}</h2>
+      <div className="max-w-4xl mx-auto">
+        <Card className="transition-transform hover:-translate-y-2 hover:shadow-lg">
+          <CardHeader>
+            <CardTitle className="text-xl">{t('languages.description')}</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {languages.map((language, index) => (
+              <div key={index} className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">{language.name}</span>
+                  <span className="text-sm text-muted-foreground">{language.level}</span>
+                </div>
+                <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-primary transition-all duration-500" 
+                    style={{ width: `${language.proficiency}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </div>
     </section>
 
     <section id="skills" className="space-y-8">
