@@ -94,5 +94,8 @@ export const en = {
       level: "A2",
       proficiency: 20
     }
+  },
+  footer: {
+    copyright: "© 2024 João AC. All rights reserved."
   }
 }; 

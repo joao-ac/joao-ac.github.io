@@ -40,20 +40,20 @@ export const pt = {
   projects: {
     title: "Projetos",
     nlwConnect: {
-      title: "NLW Connect",
-      description: "Uma aplicação web desenvolvida durante a Next Level Week da Rocketseat, focada em conectar profissionais através de eventos e networking. Implementada com Java e Spring Boot, utilizando Docker para containerização."
+      title: "NLW Connect 2025",
+      description: "Sistema de registro de eventos desenvolvido durante um curso da Rocketseat, completo com operações CRUD."
     },
     taskList: {
-      title: "Lista de Tarefas",
-      description: "Uma aplicação web para gerenciamento de tarefas, desenvolvida com Python, Flask e SQLite. Permite criar, editar e excluir tarefas, com interface responsiva e persistência de dados."
+      title: "Lista de Tarefas - Protótipo",
+      description: "Uma aplicação em desenvolvimento que permite aos usuários gerenciar suas tarefas de forma intuitiva. Com uma interface limpa e recursos práticos, a Lista de Tarefas facilita a organização do dia a dia."
     },
     portfolio: {
-      title: "Portfólio Pessoal",
-      description: "Meu portfólio pessoal desenvolvido com Next.js, apresentando meus projetos, habilidades e experiências. Design moderno e responsivo, com suporte a temas claro e escuro."
+      title: "Portfólio",
+      description: "Um portfólio dinâmico que apresenta meus projetos e habilidades em desenvolvimento web. Explore minhas criações e veja como aplico tecnologias modernas para resolver problemas do mundo real."
     },
     youtubeShorts: {
-      title: "Youtube Shorts Downloader",
-      description: "Uma aplicação web que permite baixar vídeos do YouTube Shorts, desenvolvida com React, Node.js e a biblioteca ytdl-core. Interface intuitiva e processamento assíncrono de downloads."
+      title: "Resumo de Vídeos do YouTube Shorts",
+      description: "Uma aplicação que usa inteligência artificial para fornecer resumos concisos de vídeos do YouTube Shorts. Perfeito para quem deseja captar informações-chave rapidamente sem assistir ao vídeo inteiro."
     },
     pygame: {
       title: "Jogo com Pygame",
@@ -94,5 +94,8 @@ export const pt = {
       level: "A2",
       proficiency: 20
     }
+  },
+  footer: {
+    copyright: "© 2024 João AC. Todos os direitos reservados."
   }
 }; 

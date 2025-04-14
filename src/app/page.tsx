@@ -107,14 +107,14 @@ export default function Portfolio() {
         description: t('projects.pygame.description'),
         image: "/previews/pygame.png?height=200&width=300",
         technologies: ["Python", "Pygame", "Object-Oriented Programming"],
-        githubUrl: "https://github.com/joao-ac/pygame-project"
+        githubUrl: "https://github.com/joao-ac/ProjetoGame"
       },
       {
         title: t('projects.spark.title'),
         description: t('projects.spark.description'),
         image: "/previews/spark.png?height=200&width=300",
-        technologies: ["Apache Spark", "Python", "Data Analysis", "Distributed Computing"],
-        githubUrl: "https://github.com/joao-ac/spark-project"
+        technologies: ["Apache Spark", "Python", "Docker", "Hadoop", "Data Analysis", "Distributed Computing"],
+        githubUrl: "https://github.com/joao-ac/trabalho-spark"
       }
     ]
 
