@@ -96,6 +96,7 @@ export const en = {
     }
   },
   footer: {
-    copyright: "© 2024 João AC. All rights reserved."
+    copyright: "© {year} João Antônio Correia. All rights reserved.",
+    credits: "Made with ❤️ by João Antônio Correia."
   }
 }; 
