@@ -10,7 +10,7 @@ export const en = {
   },
   about: {
     title: "About me",
-    description: "I'm João Antônio, a Systems Analysis and Development student with experience in Python, Java, Node.js and MySQL. I'm currently focusing on Python for data extraction and software development, and I also have front-end experience with React and Next.js. With English fluency (C2 level), I can effectively collaborate in multicultural and international teams. I'm looking for opportunities to apply my skills and contribute to new projects."
+    description: "I am a developer focused on Java + Spring Boot for backend, with experience in React, Next.js, and TypeScript for frontend development. I have a solid foundation in MySQL for data modeling and management, which allows me to build complete and integrated solutions. Fluent in English, I work with agile methodologies and value clear and collaborative communication within teams. I am constantly learning and applying best development practices to deliver efficient and high-quality projects."
   },
   education: {
     title: "Education",
