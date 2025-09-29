@@ -14,7 +14,7 @@ export const en = {
   },
   education: {
     title: "Education",
-    graduation: "Expected Graduation: {year}",
+    graduation: "Graduation: Dec/2025",
     description: {
       uninter: "Pursuing a degree in Systems Analysis and Development, focusing on software development, data structures, and modern web technologies. Expanding my skills in programming and system design.",
       nlwAI: "Participated in the NLW AI program, where I developed an application for summarizing YouTube Shorts videos using artificial intelligence models, enhancing my skills in React, Node.js, and AI integration.",
