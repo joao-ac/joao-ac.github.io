@@ -270,7 +270,7 @@ export default function Portfolio() {
                 )}
               </div>
             </div>
-            <div className="flex items-center gap-4 mr-4">
+            <div className="flex items-right gap-4 mr-4">
               <LanguageToggle />
               <Button
                 className="transition-transform duration-300 transform flex items-center gap-2 min-w-[40px]"
