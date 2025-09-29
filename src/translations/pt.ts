@@ -10,11 +10,11 @@ export const pt = {
   },
   about: {
     title: "Sobre mim",
-    description: "Sou João Antônio, estudante de Análise e Desenvolvimento de Sistemas com experiência em Python, Java, Node.js e MySQL. Atualmente foco em Python para extração de dados e desenvolvimento de software, e também tenho experiência em front-end com React e Next.js. Com fluência em inglês (nível C2), posso colaborar efetivamente em equipes multiculturais e internacionais. Estou em busca de oportunidades para aplicar minhas habilidades e contribuir para novos projetos."
+    description: "Sou desenvolvedor com foco em Java + Spring Boot no backend e experiência em React, Next.js e TypeScript no frontend. Tenho sólida base em MySQL para modelagem e manipulação de dados, o que me permite construir soluções completas e integradas. Fluente em inglês, atuo com metodologias ágeis e valorizo a comunicação clara e colaborativa no trabalho em equipe. Busco constantemente aprender e aplicar boas práticas de desenvolvimento para entregar projetos eficientes e de qualidade."
   },
   education: {
     title: "Formação",
-    graduation: "Previsão de Conclusão: {year}",
+    graduation: "Conclusão: Dez/2025",
     description: {
       uninter: "Cursando Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento de software, estruturas de dados e tecnologias web modernas. Expandindo minhas habilidades em programação e design de sistemas.",
       nlwAI: "Participei do programa NLW AI, onde desenvolvi uma aplicação para resumir vídeos do YouTube Shorts usando modelos de inteligência artificial, aprimorando minhas habilidades em React, Node.js e integração com IA.",
