@@ -273,7 +273,7 @@ export default function Portfolio() {
             <div className="flex items-right gap-4 mr-4">
               <LanguageToggle />
               <Button
-                className="transition-transform duration-300 transform flex items-center gap-2 min-w-[40px]"
+                className="transition-transform duration-300 transform flex items-right gap-2 min-w-[40px]"
                 variant="ghost"
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
