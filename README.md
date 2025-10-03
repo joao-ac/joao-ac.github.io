@@ -2,17 +2,17 @@
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. This project showcases my professional work, skills, and experience in a clean and interactive way.
 
-## 🚀 Features
+## Features
 
-- ⚡️ Built with Next.js 14 and TypeScript
-- 🎨 Styled with Tailwind CSS
-- 🌐 Internationalization support
-- 📱 Fully responsive design
-- 🎭 Storybook integration for component development
-- 🧪 Jest for testing
-- 🔍 ESLint and Prettier for code quality
+- Built with Next.js 14 and TypeScript
+-  Styled with Tailwind CSS
+-  Internationalization support
+-  Fully responsive design
+-  Storybook integration for component development
+-  Jest for testing
+-  ESLint and Prettier for code quality
 
-## 📦 Tech Stack
+## Tech Stack
 
 - [Next.js](https://nextjs.org/) - React framework for production
 - [TypeScript](https://www.typescriptlang.org/) - Type safety
@@ -20,7 +20,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - [Storybook](https://storybook.js.org/) - UI component development
 - [Jest](https://jestjs.io/) - Testing framework
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -51,7 +51,7 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -65,7 +65,7 @@ src/
 └── utils/            # Utility functions
 ```
 
-## 🧪 Testing
+## Testing
 
 Run tests with:
 ```bash
@@ -74,7 +74,7 @@ npm run test
 yarn test
 ```
 
-## 📚 Storybook
+## Storybook
 
 View and develop components in isolation:
 ```bash
@@ -83,15 +83,15 @@ npm run storybook
 yarn storybook
 ```
 
-## 🚀 Deployment
+## Deployment
 
 This project is automatically deployed to GitHub Pages. The deployment is handled through GitHub Actions.
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
