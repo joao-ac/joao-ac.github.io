@@ -31,12 +31,5 @@ export function generateSEOConfig({
       ],
       type,
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: siteTitle,
-      description: siteDescription,
-      images: [image],
-      creator: SITE_CONFIG.twitter,
-    },
   };
 } 
