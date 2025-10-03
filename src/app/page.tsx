@@ -365,7 +365,7 @@ export default function Portfolio() {
                 <Github className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </Button>
-              <Button className="transition-colors" variant="link" size="icon" as="a" href="https://www.linkedin.com/in/jo%C3%A3o-ant%C3%B4nio-correia-409082292/" target="_blank" rel="noopener noreferrer">
+              <Button className="transition-colors" variant="link" size="icon" as="a" href="https://www.linkedin.com/in/joao-ac1406/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </Button>
