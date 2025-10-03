@@ -538,7 +538,7 @@ export default function Portfolio() {
                   <div className="flex items-center space-x-3">
                     <Linkedin className="h-6 w-6 text-primary" />
                     <a
-                      href="https://www.linkedin.com/in/jo%C3%A3o-ant%C3%B4nio-correia-409082292/"
+                      href="https://www.linkedin.com/in/joao-ac1406/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-lg hover:underline"
