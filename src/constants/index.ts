@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   author: 'João AC',
   email: 'joao.ac1406@gmail.com',
   github: 'https://github.com/joao-ac',
-  linkedin: 'https://www.linkedin.com/in/joao-ac1406/',
+  linkedin: 'https://www.linkedin.com/in/joao-ac1406/'
 } as const;
 
 export const NAV_LINKS = [
