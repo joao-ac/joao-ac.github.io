@@ -19,8 +19,7 @@ export const NAV_LINKS = [
 
 export const SOCIAL_LINKS = [
   { name: 'GitHub', href: SITE_CONFIG.github, icon: 'github' },
-  { name: 'LinkedIn', href: SITE_CONFIG.linkedin, icon: 'linkedin' },
-  { name: 'Twitter', href: SITE_CONFIG.twitter, icon: 'twitter' },
+  { name: 'LinkedIn', href: SITE_CONFIG.linkedin, icon: 'linkedin' }
 ] as const;
 
 export const THEME_CONFIG = {
