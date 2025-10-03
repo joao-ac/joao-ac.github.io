@@ -4,10 +4,9 @@ export const SITE_CONFIG = {
   description: 'Personal portfolio website showcasing my projects and skills',
   url: 'https://joao-ac.github.io',
   author: 'João AC',
-  email: 'your.email@example.com',
+  email: 'joao.ac1406@gmail.com',
   github: 'https://github.com/joao-ac',
-  linkedin: 'https://linkedin.com/in/your-profile',
-  twitter: 'https://twitter.com/your-handle',
+  linkedin: 'https://www.linkedin.com/in/joao-ac1406/',
 } as const;
 
 export const NAV_LINKS = [
